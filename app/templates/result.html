@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Stelinpd - Result {% endblock %}
+
+{% block rooturl %} {{ result.root_url }} {% endblock %}
+
+<!-- Result status message in a nutshell -->
+
+{% block message %}
+
+    {% if result.error %}
+        <h3 class='error'> Errrr.. Something is not right! </h3>
+    {% else %}
+        <h1 class='success'> That was smooth! Here is you link: </h1>
+    {% endif %}
+
+{% endblock %}
+
+<!-- Textarea containing the details of the request -->
+
+{% block body %}
+
+    {% if result.data %}
+        <textarea class = 'textarea' rows='2' cols='60' readonly> {{ result.data }} </textarea>
+    {% else %}
+        <textarea class = 'textarea' rows='2' cols='60' readonly> {{ result.status }} - {{ result.status_message }}. Try again! </textarea>
+    {% endif %}
+
+{% endblock %}

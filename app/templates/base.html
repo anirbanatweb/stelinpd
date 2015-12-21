@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+	<!-- Head -->
+
+	<head>
+
+		<!-- Title of the page -->
+
+		<title> {% block title %} {% endblock %} </title>
+		<meta charset = "utf-8">
+
+		<!-- Include the CSS here -->
+
+		<style>
+			{% include 'stylesheet.css' %}
+		</style>
+
+		<!-- Include any scripts here -->
+
+		{% block scripts %}
+
+		{% endblock %}
+	</head>
+
+	<!-- Body -->
+
+	<body>
+		<div class = "container">
+
+			<!-- Logo -->
+
+			<a href = "{% block rooturl %}{% endblock %}" title = "Shorten URLs quickly!"> <h1 class = "title"> stelinpd </h1> </a>
+
+			<!-- Short message area -->
+
+			{% block message %}
+
+			{% endblock %}
+
+			<!-- Main body of the page -->
+
+			{% block body %}
+
+            {% endblock %}
+		</div>
+	</body>
+
+</html>

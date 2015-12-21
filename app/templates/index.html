@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!-- For the description of the various blocks check the file base.html -->
+
+{% block title %} Stelinpd - Shorten URLs quickly! {% endblock %}
+
+{% block rooturl %} {{ result.root_url }} {% endblock %}
+
+<!-- result.logged_in is used to check if the user is already logged in or not. Display the message accordingly -->
+
+{% block message %}
+
+    {% if result.logged_in %}
+        <p class = 'greetings'> Hi {{ result.first_name }}! <a id = 'button' href = '/signout/'> Sign out </a> </p>
+    {% else %}
+        <p class = 'greetings'> Hi there! </p>
+    {% endif %}
+
+{% endblock %}
+
+<!-- If the user is not logged in, block the input area otherwise show it -->
+
+{% block body %}
+
+    {% if result.logged_in %}
+        <form action = "/create/" method = "post"> {% csrf_token %}
+            <input type = "url" id = "url" name = "url" placeholder = "Enter a URL to shorten it. For example, https://www.wikipedia.org/" autocomplete = "off">
+            <input type = "submit" value = "Shorten">
+        </form>
+
+    {% else %}
+        <p class = 'greetings'> <a href = "/signin/"><em>Sign in</em></a> or <a href = "/signup/"><em>Sign up</em></a> to shorten links! </p>
+    {% endif %}
+
+{% endblock %}

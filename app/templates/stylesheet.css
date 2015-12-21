@@ -1,0 +1,122 @@
+body
+{
+	font-family: Tahoma, sans-serif;
+	font-size: 1em;
+}
+
+input
+{
+	background-color: #fff;
+	border: 0.1em solid #ccc;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	font-weight: bold;
+	padding: 1em;
+	font-size: 1em;
+}
+
+input[type="url"], [type="text"], [type="password"], [type="email"]
+{
+	width: 37em;
+	height: 1em;
+	font-size: 1em;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+input[type="submit"]
+{
+	margin-top: 2em;
+	width: 10em;
+	border-radius: 5%;
+	color: #333333;
+}
+
+input[type="checkbox"]
+{
+    vertical-align:middle;
+	display: inline-block;
+}
+
+.greetings
+{
+	font-size: 1.5em;
+	font-family: Georgia, Serif;
+	color: #2071c6;
+	margin-bottom: 1em;
+}
+
+.greetings a:link
+{
+    border-bottom: 0.1em dotted #000;
+}
+
+#button
+{
+	color: white;
+	font-weight: bold;
+	font-family: Tahoma, sans-serif;
+	font-size: 0.5em;
+	padding: 0.5em;
+	border-radius: 15%;
+	text-decoration: none;
+	background-color: #55ACEE;
+}
+
+.title
+{
+	font-weight: normal;
+	color: #8c8c8c;
+	font-size: 5em;
+	padding-top: 0.9em;
+}
+
+a:link
+{
+	text-decoration: none;
+}
+
+.header
+{
+	float: right;
+	padding-right: 2em;
+}
+
+.container
+{
+	width: 100%;
+	max-width: 100em;;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.textarea
+{
+	background-color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-family: Tahoma, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	padding-left: 0.5em;
+	border: 0.1em solid #7cb1e9;
+}
+
+.success
+{
+	font-weight: normal;
+	color: #33cc33;
+	padding-bottom: 1em;
+	font-size: 1.5em;
+	font-family: Trebuchet MS, sans-serif;
+}
+
+.error
+{
+	font-weight: normal;
+	color: #ff1a1a;
+	padding-bottom: 1em;
+	font-size: 1.5em;
+	font-family: Trebuchet MS, sans-serif;
+}

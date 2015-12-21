@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} Stelinpd - Sign up {% endblock %}
+
+<!-- JavaScript function to show or hide the target div based on the checkbox response -->
+
+{% block scripts %}
+    <script type="text/javascript">
+			function showHide(check)
+			{
+				var targetdiv = document.getElementById("optional");
+				targetdiv.style.display = check.checked ? "block" : "none";
+			}
+	</script>
+{% endblock %}
+
+{% block rooturl %} {{ result.root_url }} {% endblock %}
+
+<!-- Display some messgae -->
+
+{% block message %}
+
+    {% if result.status %}
+        <p class = 'greetings'> Sign up </p>
+    {% else %}
+        <p class = 'error'> {{ result.status_message }} </p>
+    {% endif %}
+
+{% endblock %}
+
+<!-- Input form -->
+
+{% block body %}
+
+    <form action = "/signup/" method = "post"> {% csrf_token %}
+        <input type = "text" id = "username" name = "username" placeholder = "Enter a username. (Allowed characters: a-z A-Z 0-9 _ . Maximum length: 32)" autocomplete = "on">
+        <input type = "email" id = "email" name = "email" placeholder = "Enter an email address. Example: abc@example.com " autocomplete = "on">
+        <input type = "password" id = "password" name = "password" placeholder = "Choose a password. (Minimum length: 8, Maximum length: 64)" autocomplete = "on">
+        <input type = 'checkbox' name = 'check' id = 'check' onclick = 'showHide(this)'>
+        <label for='check'> <em>(optional)</em> show me the additional fields </label>
+        <div id = 'optional' style = 'display: none'>
+            <input type = "text" id = "first_name" name = "first_name" placeholder = "Enter your first name. (Allowed characters: a-z A-Z. Maximum length: 64)" autocomplete = "on">
+            <input type = "text" id = "last_name" name = "last_name" placeholder = "Enter your last name. (Allowed characters: a-z A-Z. Maximum length: 64)" autocomplete = "on">
+        </div>
+        <input type = "submit" value = "Sign up" id = "submit">
+    </form>
+
+{% endblock %}

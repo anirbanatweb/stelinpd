@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Stelinpd - Sign in {% endblock %}
+
+{% block rooturl %} {{ result.root_url }} {% endblock %}
+
+<!-- Display some messgae -->
+
+{% block message %}
+
+    {% if result.status %}
+        <p class = 'greetings'> Sign in </p>
+    {% else %}
+        <p class = 'error'> {{ result.status_message }} </p>
+    {% endif %}
+
+{% endblock %}
+
+<!-- Input form -->
+
+{% block body %}
+
+    <form action = "/signin/" method = "post"> {% csrf_token %}
+        <input type = "text" id = "username" name = "username" placeholder = "Enter the username" autocomplete = "on">
+        <input type = "password" id = "password" name = "password" placeholder = "Enter the password" autocomplete = "on">
+        <input type = "submit" value = "Sign in" id = "submit">
+    </form>
+
+{% endblock %}
